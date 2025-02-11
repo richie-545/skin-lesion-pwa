@@ -10,15 +10,17 @@
     <h1 class="title">Melanoma Detector</h1>
 
     <div class="container">
-        <label for="fileInput" class="upload-box">
-            Drag & Drop Image Here or Click to Upload
-        </label>
-        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+        <div class="upload-section">
+            <label for="fileInput" class="upload-box">
+                Drag & Drop Image Here or Click to Upload
+            </label>
+            <input type="file" id="fileInput" accept="image/*">
+        </div>
 
-        <div id="result">
-            <img id="uploadedImage" src="" alt="Uploaded Image" style="display:none; width:250px;">
-            <p id="prediction" style="font-size: 18px; font-weight: bold;"></p>
-            <p id="confidence" style="font-size: 16px; color: blue; font-weight: bold;"></p>
+        <div id="result" class="result-box">
+            <img id="uploadedImage" src="" alt="Uploaded Image">
+            <p id="prediction" class="prediction-text"></p>
+            <p id="confidence" class="confidence-text"></p>
         </div>
     </div>
 
