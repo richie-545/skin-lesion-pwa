@@ -1,82 +1,71 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     background: linear-gradient(to right, #ff7e5f, #feb47b);
-    color: white;
     margin: 0;
     padding: 0;
 }
 
-/* Title */
 .title {
-    font-size: 2rem;
+    font-size: 28px;
+    color: white;
     margin-top: 20px;
 }
 
-/* Container */
 .container {
     background: white;
-    width: 50%;
-    margin: 20px auto;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Upload Section */
-.upload-section {
-    margin-bottom: 20px;
+    width: 60%;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .upload-box {
     display: block;
-    border: 2px dashed #ff7e5f;
-    padding: 15px;
-    font-size: 18px;
+    width: 100%;
+    padding: 20px;
+    border: 2px dashed #ccc;
     cursor: pointer;
-    color: #333;
-    background: #f8f8f8;
-    border-radius: 10px;
+    color: #555;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .upload-box:hover {
-    background: #ff7e5f;
-    color: white;
+    border-color: #ff7e5f;
 }
 
-/* Hidden File Input */
-input[type="file"] {
+#fileInput {
     display: none;
 }
 
-/* Result Section */
 .result-box {
-    display: none;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 #uploadedImage {
-    width: 250px;
-    border-radius: 10px;
-    display: block;
-    margin: auto;
+    max-width: 100%;
+    height: auto;
+    display: none;
+    margin-top: 10px;
 }
 
 .prediction-text {
     font-size: 18px;
     font-weight: bold;
-    color: black;
+    color: green;
 }
 
 .confidence-text {
     font-size: 16px;
-    font-weight: bold;
     color: blue;
+    font-weight: bold;
 }
 
-/* Footer Note */
 .note {
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 20px;
+    color: white;
 }
