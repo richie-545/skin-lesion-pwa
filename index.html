@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melanoma Detector</title>
+    <title>Skin Lesion Detector</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- ✅ Load TensorFlow.js & Teachable Machine -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image"></script>
+
+    <!-- ✅ Load JavaScript Last -->
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <h1 class="title">Melanoma Detector</h1>
+    <h1 class="title">Skin Lesion Detector</h1>
 
     <div class="container">
-        <div class="upload-section">
-            <label for="fileInput" class="upload-box">
-                Drag & Drop Image Here or Click to Upload
-            </label>
-            <input type="file" id="fileInput" accept="image/*">
-        </div>
+        <label for="fileInput" class="upload-box">
+            Drag & Drop Image Here or Click to Upload
+        </label>
+        <input type="file" id="fileInput" accept="image/*">
 
         <div id="result" class="result-box">
             <img id="uploadedImage" src="" alt="Uploaded Image">
@@ -25,12 +30,5 @@
     </div>
 
     <p class="note">Developed for melanoma detection using AI. Always consult a doctor for medical advice.</p>
-
-    <!-- ✅ Add Required Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image"></script>
-
-    <!-- Your Script -->
-    <script src="script.js"></script>
 </body>
 </html>
