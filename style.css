@@ -1,20 +1,60 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 20px;
-    background-color: #f7f7f7;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
-    color: #333;
-}
-
-input {
+.title {
     margin-top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.container {
+    background: white;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-box {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 15px;
+    border: 2px dashed #ff7e5f;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.upload-box:hover {
+    background: rgba(255, 255, 255, 0.8);
 }
 
 #result {
     margin-top: 20px;
+}
+
+#prediction {
     font-size: 20px;
     font-weight: bold;
+    color: green;
+}
+
+#confidence {
+    font-size: 18px;
+    font-weight: bold;
+    color: blue;
+}
+
+.note {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ddd;
 }
