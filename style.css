@@ -1,245 +1,116 @@
-/* Reset defaults */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body styling with dark gradient; transition for dark/light mode */
+/* General Styles */
 body {
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #1f1c2c, #928dab);
-  color: #f1f1f1;
-  text-align: center;
-  padding: 20px;
-  transition: background 0.3s ease, color 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #2E2A3B, #4A4468);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
 }
 
-/* Light mode overrides */
-body.light-mode {
-  background: #f1f1f1;
-  color: #333;
-}
-
-/* Navigation Bar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #2d2a40;
-  padding: 10px 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-.nav-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-.nav-links {
-  list-style: none;
-  display: flex;
-}
-.nav-links li {
-  margin: 0 10px;
-}
-.nav-links a {
-  color: #f1f1f1;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-.nav-links a:hover {
-  color: #66ff66;
-}
-.mode-toggle {
-  background: #66ff66;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-/* Spinner for loading messages */
-.spinner {
-  font-size: 1.2rem;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-/* Main Container (Card) */
-.container {
-  background: #2d2a40;
-  border-radius: 16px;
-  padding: 40px 20px;
-  max-width: 600px;
-  margin: auto;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-  position: relative;
+/* Main Container */
+.skin-detector-container {
+    max-width: 450px;
+    width: 90%;
+    background: #1F1B2D;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Title */
 .title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  font-weight: 700;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
 }
 
-/* Upload Section */
-.upload-section {
-  margin-bottom: 20px;
-}
+/* Upload Box */
 .upload-box {
-  background: #3b3a50;
-  border: 2px dashed #6a679e;
-  border-radius: 12px;
-  padding: 30px;
-  font-size: 1.2rem;
-  color: #ccc;
-  cursor: pointer;
-  transition: background 0.3s ease, border 0.3s ease;
-}
-.upload-box:hover,
-.upload-box.dragover {
-  background: #48465f;
-  border-color: #8c89c0;
+    border: 2px dashed #bbb;
+    background: #2E2A3B;
+    color: #ddd;
+    padding: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    margin: 15px 0;
 }
 
-/* Hidden file input */
-#fileInput {
-  display: none;
+.upload-box:hover {
+    background: #3A3750;
 }
 
-/* Result Box with fade-in animation */
-.result-box {
-  margin-top: 20px;
-  animation: fadeIn 0.5s ease-in-out;
+/* Result Section */
+.result-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00ff00;
 }
-#uploadedImage {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  display: none;
-  margin-bottom: 20px;
-}
-.prediction-text {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #66ff66;
-  margin-bottom: 10px;
-}
+
 .confidence-text {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #00ccff;
+    font-size: 16px;
+    color: #ffcc00;
+    font-weight: bold;
 }
 
-/* Tooltip styling for info icon */
-.tooltip {
-  border-bottom: 1px dotted currentColor;
-  cursor: help;
+/* Buttons */
+.result-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
 }
 
-/* Action Buttons */
-.action-buttons {
-  margin: 20px 0;
+.result-buttons button {
+    background: #2ECC71;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    max-width: 200px;
 }
-.btn {
-  background: #66ff66;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-.btn:hover {
-  background: #57d957;
+
+.result-buttons button:hover {
+    background: #27AE60;
 }
 
 /* Feedback Section */
-.feedback {
-  margin-top: 20px;
-  font-size: 1rem;
-}
-.feedback-btn {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  margin: 0 10px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-.feedback-btn:hover {
-  transform: scale(1.2);
+.feedback-section {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
 }
 
-/* Info Sections (How It Works, FAQ) */
-.info-section {
-  background: #2d2a40;
-  border-radius: 12px;
-  padding: 20px;
-  max-width: 600px;
-  margin: 40px auto;
-  text-align: left;
-}
-.info-section h2 {
-  margin-bottom: 10px;
-  font-size: 2rem;
-  border-bottom: 2px solid #66ff66;
-  padding-bottom: 5px;
-}
-.info-section p,
-.faq-item p {
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-.faq-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+.feedback-icons {
+    font-size: 20px;
+    cursor: pointer;
 }
 
-/* Footer */
-.footer {
-  margin-top: 40px;
-  padding: 20px;
-  background: #2d2a40;
-  border-radius: 12px;
-  font-size: 0.9rem;
-}
-.footer a {
-  color: #66ff66;
-  text-decoration: none;
-  margin: 0 5px;
-  transition: color 0.3s ease;
-}
-.footer a:hover {
-  color: #57d957;
+/* Footer Note */
+.note {
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 15px;
 }
 
-/* Fade In Animation */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .container,
-  .info-section {
-    width: 90%;
-    padding: 20px;
-  }
-  .nav-links {
-    flex-direction: column;
-  }
-  .nav-links li {
-    margin: 5px 0;
-  }
+/* Responsive Design */
+@media (min-width: 600px) {
+    .result-buttons {
+        flex-direction: row;
+    }
 }
