@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skin Lesion Detector</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- ✅ Fix: Load TensorFlow.js first -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+    <!-- ✅ Fix: Load Teachable Machine after TensorFlow -->
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
     <div class="skin-detector-container">
@@ -38,10 +44,7 @@
 
     <p class="note">Developed for melanoma detection using AI. Always consult a doctor for medical advice.</p>
 
-    <!-- ✅ Add Teachable Machine Library (Fix) -->
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-    
-    <!-- Your Script File -->
+    <!-- ✅ Fix: Load Teachable Machine properly -->
     <script src="script.js"></script>
 </body>
 </html>
