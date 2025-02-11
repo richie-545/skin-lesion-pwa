@@ -8,7 +8,7 @@
 
     <!-- ✅ Load TensorFlow.js & Teachable Machine -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 
     <!-- ✅ Load JavaScript Last -->
     <script defer src="script.js"></script>
@@ -20,7 +20,7 @@
         <label for="fileInput" class="upload-box">
             Drag & Drop Image Here or Click to Upload
         </label>
-        <input type="file" id="fileInput" accept="image/*">
+        <input type="file" id="fileInput" accept="image/*" disabled>
 
         <div id="result" class="result-box">
             <img id="uploadedImage" src="" alt="Uploaded Image">
