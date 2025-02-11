@@ -1,97 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skin Lesion Detector</title>
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Google Font for a modern look -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Load TensorFlow.js & Teachable Machine Library -->
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-
-  <!-- Load our custom script -->
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Lesion Detector</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="nav-logo">Skin Lesion Detector</div>
-    <ul class="nav-links">
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button id="mode-toggle" class="mode-toggle">Toggle Mode</button>
-  </nav>
+    <div class="skin-detector-container">
+        <h1 class="title">Skin Lesion Detector</h1>
 
-  <!-- Loading Spinner (hidden by default) -->
-  <div id="loading-spinner" class="spinner" style="display:none;"></div>
+        <!-- Image Upload Section -->
+        <label for="fileInput" class="upload-box">
+            Drag & Drop Image Here or Click to Upload
+        </label>
+        <input type="file" id="fileInput" accept="image/*" style="display: none;">
 
-  <!-- Main Container -->
-  <div class="container">
-    <h1 class="title">Skin Lesion Detector</h1>
-    <div class="upload-section">
-      <label for="fileInput" class="upload-box">
-        Drag & Drop Image Here or Click to Upload
-      </label>
-      <input type="file" id="fileInput" accept="image/*" disabled>
-    </div>
-    <div id="result" class="result-box">
-      <img id="uploadedImage" src="" alt="Uploaded Image">
-      <p id="prediction" class="prediction-text"></p>
-      <p id="confidence" class="confidence-text"></p>
-    </div>
-    <!-- Action Buttons -->
-    <div class="action-buttons">
-      <button id="share-btn" class="btn">Share Result</button>
-      <button id="download-btn" class="btn">Download Result</button>
-    </div>
-    <!-- Feedback Section -->
-    <div class="feedback">
-      <span>Was this result helpful?</span>
-      <button class="feedback-btn" id="thumbs-up">👍</button>
-      <button class="feedback-btn" id="thumbs-down">👎</button>
-    </div>
-  </div>
+        <!-- Prediction Result -->
+        <div id="result">
+            <img id="uploadedImage" src="" alt="Uploaded Image" style="display:none; width:250px;">
+            <p id="prediction" class="result-text"></p>
+            <p id="confidence" class="confidence-text"></p>
+        </div>
 
-  <!-- How It Works Section -->
-  <section id="how-it-works" class="info-section">
-    <h2>How It Works</h2>
-    <p>
-      This tool uses an AI model trained on skin lesion images to detect potential melanoma. Simply upload an image and the model will analyze it, providing a prediction along with a confidence score. Please note that this tool is for informational purposes only and should not replace professional medical advice.
-    </p>
-  </section>
+        <!-- Action Buttons -->
+        <div class="result-buttons">
+            <button id="shareResult">Share Result</button>
+            <button id="downloadResult">Download Result</button>
+        </div>
 
-  <!-- FAQ Section -->
-  <section id="faq" class="info-section">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>Is this tool 100% accurate?</h3>
-      <p>No, the tool provides a prediction based on AI analysis, but it is not a substitute for a medical diagnosis.</p>
+        <!-- Feedback Section -->
+        <div class="feedback-section">
+            <p>Was this result helpful?</p>
+            <span class="feedback-icons">👍 👎</span>
+        </div>
     </div>
-    <div class="faq-item">
-      <h3>What should I do if I get a positive result?</h3>
-      <p>If the tool indicates potential issues, please consult a qualified medical professional for further evaluation.</p>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer" id="contact">
-    <p>&copy; 2025 Skin Lesion Detector. All rights reserved.</p>
-    <p>
-      <a href="#">Privacy Policy</a> |
-      <a href="#">Terms of Use</a> |
-      <a href="#">Contact Us</a>
-    </p>
-  </footer>
+    <p class="note">Developed for melanoma detection using AI. Always consult a doctor for medical advice.</p>
+
+    <script src="script.js"></script>
 </body>
 </html>
